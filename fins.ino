@@ -38,5 +38,48 @@ void setup(void)
 
 void loop()
 {
-
+  // Read the 'raw' data in 14-bit counts
+  mma.read();
+  // Get a new sensor event
+  sensors_event_t event; 
+  mma.getEvent(&event);
+  // Get acceleration in m/(s^2)
+  float accel_x = event.acceleration.x;
+  float accel_y = event.acceleration.y;
+  float accel_z = event.acceleration.z;
+  Serial.print("X: \t"); Serial.print(event.acceleration.x); Serial.print("\t");
+  Serial.print("Y: \t"); Serial.print(event.acceleration.y); Serial.print("\t");
+  Serial.print("Z: \t"); Serial.print(event.acceleration.z); Serial.print("\t");
+  Serial.println("m/(s^2)");
+  
+  // Get the orientation of the sensor
+  uint8_t orientation = mma.getOrientation();
+  switch (orientation) {
+    case MMA8451_PL_PUF: 
+      Serial.println("Portrait Up Front");
+      break;
+    case MMA8451_PL_PUB: 
+      Serial.println("Portrait Up Back");
+      break;    
+    case MMA8451_PL_PDF: 
+      Serial.println("Portrait Down Front");
+      break;
+    case MMA8451_PL_PDB: 
+      Serial.println("Portrait Down Back");
+      break;
+    case MMA8451_PL_LRF: 
+      Serial.println("Landscape Right Front");
+      break;
+    case MMA8451_PL_LRB: 
+      Serial.println("Landscape Right Back");
+      break;
+    case MMA8451_PL_LLF: 
+      Serial.println("Landscape Left Front");
+      break;
+    case MMA8451_PL_LLB: 
+      Serial.println("Landscape Left Back");
+      break;
+   }
+   Serial.println();
+   delay(1000);
 }
