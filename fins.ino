@@ -1,4 +1,3 @@
-#include <stdlib.h>
 // For Bluetooth
 #include <SPI.h>
 #include <Adafruit_BLE_UART.h>
