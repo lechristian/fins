@@ -89,31 +89,12 @@ void loop()
     char sendbuffersize = min(20, accel_data.length());
 
     // Print for Debugging
-    Serial.print(F("\n* Sending -> \""));
-    Serial.print((char *)sendbuffer);
-    Serial.println("\"");
+    // Serial.print(F("\n* Sending -> \""));
+    // Serial.print((char *)sendbuffer);
+    // Serial.println("\"");
 
     // Write to BLE buffer
     BLEserial.write(sendbuffer, sendbuffersize);
-
-    // Next up, see if we have any data to get from the Serial console
-    // if (Serial.available()) {
-    //   // Read a line from Serial
-    //   Serial.setTimeout(100); // 100 millisecond timeout
-    //   String s = Serial.readString();
-
-    //   // We need to convert the line to bytes, no more than 20 at this time
-    //   uint8_t sendbuffer[20];
-    //   s.getBytes(sendbuffer, 20);
-    //   char sendbuffersize = min(20, s.length());
-
-    //   Serial.print(F("\n* Sending -> \""));
-    //   Serial.print((char *)sendbuffer);
-    //   Serial.println("\"");
-
-    //   // write the data
-    //   BLEserial.write(sendbuffer, sendbuffersize);
-    // }
   }
 
   delay(1000);
