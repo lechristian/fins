@@ -1,10 +1,13 @@
-// For Bluetooth
 #include <SPI.h>
+// For Bluetooth
 #include <Adafruit_BLE_UART.h>
 // For Accelerometer
 #include <Wire.h>
 #include <Adafruit_MMA8451.h>
 #include <Adafruit_Sensor.h>
+// For OLED Screen
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1331.h>
 
 // Accelerometer
 Adafruit_MMA8451 accelerometer = Adafruit_MMA8451();
@@ -16,10 +19,27 @@ Adafruit_MMA8451 accelerometer = Adafruit_MMA8451();
 
 Adafruit_BLE_UART BLEserial = Adafruit_BLE_UART(ADAFRUITBLE_REQ, ADAFRUITBLE_RDY, ADAFRUITBLE_RST);
 
+// OLED Screen
+#define OLED_SCLK A0
+#define OLED_MOSI A1
+#define OLED_CS   8
+#define OLED_RST  7
+#define OLED_DC   6
+
+Adafruit_SSD1331 display = Adafruit_SSD1331(OLED_CS, OLED_DC, OLED_MOSI, OLED_SCLK, OLED_RST);
+
 void setup(void)
 {
   Serial.begin(9600);
   while (!Serial); // Leonardo/Micro should wait for serial init
+  
+  // Setup OLED
+  display.begin();
+  uint16_t time = millis();
+  display.fillScreen(BLACK);
+  time = millis() - time;
+  
+  tftPrintTest();
 
   // Setup BLE
   BLEserial.setDeviceName("Fins"); // 7 Characters Max
@@ -151,5 +171,38 @@ String accelerometerOrientation()
       return "Landscape Left Back";
       break;
   }
+}
+
+void tftPrintTest() {
+  display.fillScreen(BLACK);
+  display.setCursor(0, 5);
+  display.setTextColor(RED);  
+  display.setTextSize(1);
+  display.println("Hello World!");
+  display.setTextColor(YELLOW, GREEN);
+  display.setTextSize(2);
+  display.print("Hello Wo");
+  display.setTextColor(BLUE);
+  display.setTextSize(3);
+  display.print(1234.567);
+  delay(1500);
+  display.setCursor(0, 5);
+  display.fillScreen(BLACK);
+  display.setTextColor(WHITE);
+  display.setTextSize(0);
+  display.println("Hello World!");
+  display.setTextSize(1);
+  display.setTextColor(GREEN);
+  display.print(p, 5);
+  display.println(" Want pi?");
+  display.print(8675309, HEX); // print 8,675,309 out in HEX!
+  display.print(" Print HEX");
+  display.setTextColor(WHITE);
+  display.println("Sketch has been");
+  display.println("running for: ");
+  display.setTextColor(MAGENTA);
+  display.print(millis() / 1000);
+  display.setTextColor(WHITE);
+  display.print(" seconds.");
 }
 
