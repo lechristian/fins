@@ -7,6 +7,15 @@
     <color name="blue_title_accent">#29abe2</color>
     <color name="blue_subtitle_accent">#98d3dd</color>
     <color name="white_accent">#FFFFFF</color>
-    <color name="black">#000000</color>
+    <color name="teal">#65c8d0</color>
+    <color name="lime_green">#81ab23</color>
+    <color name="red">#ed462f</color>
+    <color name="dark_grey">#7f8f99</color>
+    <color name="green_grey">#2f444b</color>
+    <color name="orange">#ef6930</color>
+
+
+
+
 
 </resources>

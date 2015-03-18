@@ -48,10 +48,10 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/explore"
+        android:id="@+id/about"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/explore"
+        android:text="About"
         android:textColor="@color/white_accent"
         android:gravity="center"
         android:background="@color/gray_accent"
@@ -66,7 +66,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
-        android:paddingTop="60dp"/>
+        android:paddingTop="300dp"/>
 
     <RelativeLayout
         android:id="@+id/main_activity_bottom_bar"
