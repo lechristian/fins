@@ -20,7 +20,9 @@ import android.os.Handler;
 
 import java.util.ArrayList;
 
-
+/**
+ * Created by Short on 3/17/2015.
+ */
 public class ScanActivity extends ListActivity {
 
     private BluetoothAdapter mBluetoothAdapter;
