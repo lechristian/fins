@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity"
+                android:id="@+id/top_layout" >
+
+    <RelativeLayout
+        android:id="@+id/main_activity_top_bar"
+        style="@style/TopBar"
+        android:background="@color/blue_top_bar_accent" >
+
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:src="@drawable/menu_button"
+            style="@style/TobBarImageButtons"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/flip_logo"
+            style="@style/TobBarLogo"
+            android:src="@drawable/flip_logo" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:src="@drawable/connect_button"
+            style="@style/TobBarImageButtons"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="startAddFriendsActivity" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="@color/white_accent"
+        android:gravity="center"
+        android:background="@color/gray_accent"
+        android:paddingTop="2dp"
+        android:layout_below="@id/main_activity_top_bar"
+        android:layout_margin="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true" />
+
+    <ImageView
+        android:id="@+id/sea_creature_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/about"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/sea_creature_description"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/sea_creature_image" />
+
+    <RelativeLayout
+        android:id="@+id/main_activity_bottom_bar"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" >
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
