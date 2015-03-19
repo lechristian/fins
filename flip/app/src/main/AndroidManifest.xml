@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DeviceScanActivity"
             android:label="@string/title_activity_device_scan"
@@ -29,6 +28,10 @@
             android:enabled="true" >
         </service>
 
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

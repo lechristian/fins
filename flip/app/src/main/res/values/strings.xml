@@ -13,5 +13,10 @@
     <string name="cancel">Cancel</string>
     <string name="paired">paired</string>
     <string name="explore">Explore</string>
+    <string name="starfish_description">Did you know? Sea stars have no brains and no blood. Their nervous system is spread through their arms and their “blood” is actually filtered sea water.</string>
+
+    <string name="title_activity_about">AboutActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>
